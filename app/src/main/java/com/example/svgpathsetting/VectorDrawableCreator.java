@@ -42,8 +42,6 @@ public class VectorDrawableCreator {
             android.R.attr.viewportHeight,
             android.R.attr.fillColor,
             android.R.attr.pathData,
-
-
     };
 
     private static final short CHUNK_TYPE_XML = 0x0003;
