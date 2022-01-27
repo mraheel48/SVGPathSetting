@@ -55,13 +55,13 @@ class MainActivity : AppCompatActivity() {
         val pathList5 = listOf(PathData("M340.79,75.376 L324.418,97.941s15.043,-37.166 23.45,-47.785c-4.425,24.335 24.778,35.4 24.778,35.4s-20.354,6.194 -25.22,4.424S340.79,75.376 340.79,75.376ZM191.684,288.637l19.467,4.867a74.314,74.314 0,0 0,18.583 -2.655C222.209,286.867 191.684,288.637 191.684,288.637ZM299.642,370.048 L289.023,357.217s-26.547,-21.238 -31.414,-26.989a90.017,90.017 0,0 0,11.5 20.8ZM308.491,462.963 L289.465,424.47s10.619,35.4 13.716,41.148 7.522,13.716 7.522,13.716a68.681,68.681 0,0 1,-38.051 -25.22c2.655,11.946 12.389,21.238 41.591,33.626 3.5,4.581 6.465,8.331 8.9,11.345h3.408ZM402.573,89.976c4.868,-1.769 6.637,-14.6 6.637,-14.6l16.371,22.565s-15.043,-37.166 -23.45,-47.785c4.425,24.335 -24.777,35.4 -24.777,35.4s20.353,6.19 25.219,4.42ZM558.316,288.637s-30.529,-1.77 -38.05,2.212a74.308,74.308 0,0 0,18.583 2.655ZM450.357,370.048l30.53,-19.025a90.019,90.019 0,0 0,11.5 -20.8c-4.866,5.751 -31.414,26.989 -31.414,26.989ZM435.757,487.74c29.2,-12.388 38.936,-21.68 41.591,-33.626a68.678,68.678 0,0 1,-38.051 25.22s4.424,-7.965 7.522,-13.716 13.716,-41.148 13.716,-41.148L441.509,462.963 423.449,499.085h3.407c2.436,-3.014 5.4,-6.764 8.9,-11.345Z", Color.parseColor("#e65a65")))
 
 
-        imageView1!!.setImageDrawable(VectorDrawableCreator.getVectorDrawable(this, 487, 1280, 1280f, 487f, pathList1))
+      //  imageView1!!.setImageDrawable(VectorDrawableCreator.getVectorDrawable(this, 487, 1280, 1280f, 487f, pathList1))
         imageView2!!.setImageDrawable(VectorDrawableCreator.getVectorDrawable(this, 487, 1280, 1280f, 487f, pathList2))
         imageView3!!.setImageDrawable(VectorDrawableCreator.getVectorDrawable(this, 487, 1280, 1280f, 487f, pathList3))
         imageView4!!.setImageDrawable(VectorDrawableCreator.getVectorDrawable(this, 487, 1280, 1280f, 487f, pathList4))
      //   imageView5!!.setImageDrawable(VectorDrawableCreator.getVectorDrawable(this, 1280, 487, 1280f, 487f, pathList5))
 
-        main_root.addView(imageView1)
+       // main_root.addView(imageView1)
        /* pView?.addView(imageView1)
         pView?.addView(imageView2)
         pView?.addView(imageView3)
@@ -197,11 +197,11 @@ class MainActivity : AppCompatActivity() {
 
     private fun upDateLayer(vectorJsonReader: ArrayList<VectorJson>) {
 
-        val pathList1 = listOf(PathData(vectorJsonReader[0].path?.get(1)?.androidpathData, Color.parseColor(vectorJsonReader[0].path?.get(1)?.androidfillColor)))
+        val pathList1 = listOf(PathData(vectorJsonReader[0].path?.get(0)?.androidpathData, Color.parseColor(vectorJsonReader[0].path?.get(1)?.androidfillColor)))
         val layerWidth: Float = vectorJsonReader[0].androidviewportWidth!!.toFloat()
         val layerHeight: Float = vectorJsonReader[0].androidviewportHeight!!.toFloat()
 
-        Log.e("myTag", "${layerWidth}, ${layerHeight}")
+        Log.d("myTag", "${layerWidth}, ${layerHeight}")
         imageView1!!.setImageDrawable(VectorDrawableCreator.getVectorDrawable(this, layerHeight.roundToInt(), layerWidth.roundToInt(), layerWidth, layerHeight, pathList1))
         pView?.addView(imageView1)
 
@@ -226,7 +226,7 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    fun readJSONFromAsset(): String? {
+    private fun readJSONFromAsset(): String? {
         var json: String? = null
         try {
             val inputStream: InputStream = assets.open("shipping1.json")

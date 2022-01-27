@@ -120,7 +120,9 @@ public class VectorDrawableCreator {
         //ByteBuffer bb = ByteBuffer.allocate(8192);  // Capacity might have to be greater. 8kb size
         //ByteBuffer bb = ByteBuffer.allocate(32768);  // Capacity might have to be greater.32kb size
         //ByteBuffer bb = ByteBuffer.allocate(65536);  // Capacity might have to be greater.64kb size
-        ByteBuffer bb = ByteBuffer.allocate(131072);  // Capacity might have to be greater.128kb size
+        //ByteBuffer bb = ByteBuffer.allocate(131072);  // Capacity might have to be greater.128kb size
+        //ByteBuffer bb = ByteBuffer.allocate(262144);  // Capacity might have to be greater.256kb size
+        ByteBuffer bb = ByteBuffer.allocate(524288);  // Capacity might have to be greater.512kb size
         bb.order(ByteOrder.LITTLE_ENDIAN);
 
         int posBefore;
