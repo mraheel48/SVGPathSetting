@@ -7,6 +7,7 @@ import android.graphics.drawable.shapes.OvalShape
 import android.view.View
 
 class CustomDrawableView(context: Context) : View(context) {
+
     private val drawable: ShapeDrawable = run {
         val x = 10
         val y = 10
